@@ -1,0 +1,156 @@
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap'
+    );
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif
+}
+
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar{
+    width: 300px;
+    background-color: #121212;
+    padding: 10px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nav-logo i {
+    font-size: 24px;
+
+}
+
+.nav-library{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.nav-library i, .nav-library p {
+    font-size: 14px;
+    color: #b7b3b6;
+    cursor: pointer;
+}
+
+.nav-playlist, .nav-podcast{
+    background-color: #242424;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.nav-playlist button, .nav-podcast button{
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 6px 10px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+.nav-playlist p, .nav-podcast p{
+    font-size: 12px;
+}
+
+.nav-footer{
+    margin-top: auto;
+
+}
+
+.nav-footer a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+}
+
+.nav-lang-button{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 12px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+main{
+    padding: 24px;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: block;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+}
+
+.search-bar input{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+}
+
+.artists-grid, .albums-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.artist-card, .album-card{
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.artist-card:hover, .album-card:hover{
+    background-color: #282828;
+}
+
+.artist-card, .album-card{
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.artist-card img, .album-card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.artist-card h3, .album-card h3{
+}
+
+.artist-card p, .album-card img
