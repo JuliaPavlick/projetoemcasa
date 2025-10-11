@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Define o tipo de documento como HTML5 -->
     <meta charset="UTF-8">
+    <!-- Garante que a página se adapte a qualquer tamanho de tela (responsiva) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba do navegador -->
     <title>Viagens</title>
+
+    <!-- Importa o arquivo CSS externo com os estilos -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Pré-conexões para melhorar o carregamento das fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" 
-    rel="stylesheet">
+
+    <!-- Importa fontes do Google Fonts -->
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&
+              family=Figtree:ital,wght@0,300..900;1,300..900&
+              family=Montserrat:ital,wght@0,100..900;1,100..900&
+              family=Orbitron:wght@400..900&
+              display=swap" 
+        rel="stylesheet">
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <header>
         <nav>
+            <!-- Links de navegação (por enquanto não direcionam para páginas específicas) -->
             <a href="#">Home</a>
             <a href="#">Informações</a>
             <a href="#">Fale Conosco</a>
         </nav>
     </header>
+
+    <!-- Conteúdo principal -->
     <main class="container">
+        <!-- Lista principal de destinos (grandes imagens e textos) -->
         <div class="list">
+
+            <!-- Cada .list-item representa um destino -->
             <div class="list-item">
                 <img src="./img/img1.jpg">
                 <div class="content">
                     <h2 class="title">Bali</h2>
-                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Accusantium eos repudiandae rem enim. Corporis laborum praesentium 
                         voluptatem voluptatum cupiditate officia tempora, harum aspernatur 
-                        architecto in earum, ipsum, aliquam eius nam.</p>
+                        architecto in earum, ipsum, aliquam eius nam.
+                    </p>
                     <div class="buttons">
                         <button>Saiba Mais</button>
                         <button>Acessar</button>
@@ -35,14 +59,17 @@
                 </div>
             </div>
 
+            <!-- Próximo destino -->
             <div class="list-item">
                 <img src="./img/img2.jpg">
                 <div class="content">
                     <h2 class="title">Paris</h2>
-                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Accusantium eos repudiandae rem enim. Corporis laborum praesentium 
                         voluptatem voluptatum cupiditate officia tempora, harum aspernatur 
-                        architecto in earum, ipsum, aliquam eius nam.</p>
+                        architecto in earum, ipsum, aliquam eius nam.
+                    </p>
                     <div class="buttons">
                         <button>Saiba Mais</button>
                         <button>Acessar</button>
@@ -54,10 +81,12 @@
                 <img src="./img/img3.jpg">
                 <div class="content">
                     <h2 class="title">Roma</h2>
-                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Accusantium eos repudiandae rem enim. Corporis laborum praesentium 
                         voluptatem voluptatum cupiditate officia tempora, harum aspernatur 
-                        architecto in earum, ipsum, aliquam eius nam.</p>
+                        architecto in earum, ipsum, aliquam eius nam.
+                    </p>
                     <div class="buttons">
                         <button>Saiba Mais</button>
                         <button>Acessar</button>
@@ -69,10 +98,12 @@
                 <img src="./img/img4.jpg">
                 <div class="content">
                     <h2 class="title">Veneza</h2>
-                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Accusantium eos repudiandae rem enim. Corporis laborum praesentium 
                         voluptatem voluptatum cupiditate officia tempora, harum aspernatur 
-                        architecto in earum, ipsum, aliquam eius nam.</p>
+                        architecto in earum, ipsum, aliquam eius nam.
+                    </p>
                     <div class="buttons">
                         <button>Saiba Mais</button>
                         <button>Acessar</button>
@@ -80,6 +111,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Miniaturas (thumbnails) dos destinos -->
         <div class="thumb">
             <div class="thumb-item">
                 <img src="./img/img1.jpg" alt="foto-cidade">
@@ -109,15 +142,19 @@
                 <img src="./img/img4.jpg" alt="foto-cidade">
                 <div class="content">
                     <h3>Veneza</h3>
-                    <p>Visite veneza</p>
+                    <p>Visite Veneza</p>
                 </div>
             </div>
         </div>
+
+        <!-- Botões de navegação do carrossel -->
         <div class="arrows">
             <button class="back"> < </button>
             <button class="next"> > </button>
         </div>
     </main>
+
+    <!-- Importa o script JavaScript com a lógica do carrossel -->
     <script src="./js/validacoes.js"></script>
 </body>
 </html>
