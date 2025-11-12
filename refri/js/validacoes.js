@@ -1,26 +1,20 @@
-let list = document.querySelectorAll('.item')
-let next = document.getElementById('next')
-let prev = document.getElementById('prev')
+const list = document.querySelectorAll('.item');
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
 
-let count = list.length
-let active = 0
+let active = 0;
 
-console.log(list)
-
-console.log(count)
-
-next.onclick = () => {
-    let activeOld = document.querySelector('.active')
-    activeOld.classList.remove('active')
-
-    active = active >= count -1 ? 0 : active +1
-    list[active].classList.add('active')
+function changeSlide(direction) {
+  list[active].classList.remove('active');
+  active = (active + direction + list.length) % list.length;
+  list[active].classList.add('active');
 }
 
-prev.onclick = () => {
-     let activeOld = document.querySelector('.active')
-    activeOld.classList.remove('active')
+next.addEventListener('click', () => changeSlide(1));
+prev.addEventListener('click', () => changeSlide(-1));
 
-    active = active <= 0 ? count -1 : active -1
-    list[active].classList.add('active')
-}
+// Extra: controle com teclado (opcional)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') changeSlide(1);
+  if (e.key === 'ArrowLeft') changeSlide(-1);
+});

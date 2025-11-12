@@ -1,3 +1,12 @@
+.main{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
 .item{
     display: none;
     width: 100%;
@@ -7,10 +16,13 @@
     left: 0;
     overflow: hidden;
     background-color: var(--background);
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
 }
 
 .item.active{
     display: block;
+    opacity: 1;
 }
 
 .item .title{
@@ -26,17 +38,23 @@
     transform: translate(-50%, -50%);
 }
 
-.item .fruta{
-    width: 90%;
+.item .fruta {
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 600px;
+    height: auto;
     z-index: 3;
+    object-fit: contain;
 }
 
 .item .refri{
     z-index: 2;
-    width: 600px;
-
+    width: 60%;
+    max-width: 600px;
+    height: auto;
     position: absolute;
     left: 50%;
     top: 50%;
