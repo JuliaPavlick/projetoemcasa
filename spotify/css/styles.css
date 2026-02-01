@@ -12,7 +12,7 @@
 
 body{
     background-color: #000;
-    color: #fff;
+    color: var(--color-primary-6);;
 }
 
 .container{
@@ -54,7 +54,7 @@ gap: 10px;
 }
 
 .nav-playlist button, .nav-podcast button{
-    background-color: #fff;
+    background-color: var(--color-primary-6);;
     color: #000;
     border: none;
     padding: 6px 10px;
@@ -83,8 +83,8 @@ gap: 10px;
 
 .nav-lang-button{
     background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid var(--color-primary-6);;
+    color: var(--color-primary-6);;
     padding: 8px 12px;
     margin-top: 16px;
     cursor: pointer;
@@ -110,7 +110,7 @@ main{
 .search-bar input{
     background-color: transparent;
     border: none;
-    color: #fff;
+    color: var(--color-primary-6);;
     width: 100%;
     margin-left: 10px;
     outline: none;
