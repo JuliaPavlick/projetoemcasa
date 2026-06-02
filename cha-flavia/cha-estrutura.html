@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chá de Revelação da Flávia 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cha-estilo.css">
+</head>
+<body>
+
+<!-- ══ SCREEN 1: LOGIN ══ -->
+<div id="screen-login" class="screen active">
+  <div class="login-hero">
+    <div class="icon">🌸</div>
+    <h1>Chá de Revelação<br>da <em>Flávia</em></h1>
+    <p>28 de junho · Um momento especial</p>
+  </div>
+  <div class="login-box">
+    <div class="card">
+      <label class="field-label">Seu nome</label>
+      <input type="text" id="login-name" placeholder="Digite seu nome..." autocomplete="off">
+      <div id="login-greeting" style="min-height:36px; margin-top:12px; font-size:0.85rem; color:var(--soft); text-align:center;"></div>
+      <div style="margin-top:16px;">
+        <button class="btn-primary" onclick="doLogin()">Entrar 🎉</button>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:0.75rem; color:var(--soft); margin-top:16px; padding:0 16px;">
+      Você será reconhecida automaticamente neste dispositivo nas próximas visitas.
+    </p>
+  </div>
+</div>
+
+<!-- ══ SCREEN 2: VOTE ══ -->
+<div id="screen-vote" class="screen">
+  <div class="vote-hero">
+    <div style="font-size:2.5rem; margin-bottom:16px;">🤔</div>
+    <h1 style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:300; margin-bottom:8px;">
+      Qual o seu palpite?
+    </h1>
+    <p style="color:var(--soft); font-size:0.85rem;">
+      Olá, <strong id="vote-name"></strong>! Você acha que é...
+    </p>
+  </div>
+  <div class="vote-options">
+    <div class="vote-btn menino" onclick="selectVote('menino', this)">
+      <span class="vote-icon">💙</span>
+      <span class="vote-label">Menino</span>
+    </div>
+    <div class="vote-btn menina" onclick="selectVote('menina', this)">
+      <span class="vote-icon">🌸</span>
+      <span class="vote-label">Menina</span>
+    </div>
+  </div>
+  <div style="margin-top:24px; width:100%; max-width:360px; padding:0 20px;">
+    <button class="btn-primary" id="vote-btn" onclick="submitVote()" style="opacity:0.4; pointer-events:none;">
+      Confirmar meu palpite
+    </button>
+  </div>
+</div>
+
+<!-- ══ SCREEN 3: HOME ══ -->
+<div id="screen-home" class="screen">
+  <div class="top-bar">
+    <h2>🌸 Chá da Flávia</h2>
+    <div class="avatar-badge" id="user-avatar" title="Sair" onclick="logout()">?</div>
+  </div>
+
+  <!-- TAB: INÍCIO -->
+  <div id="tab-inicio" class="tab-content active home-content">
+    <div class="welcome-card">
+      <div class="greeting">Bem-vinda!</div>
+      <h2 id="home-name">Olá!</h2>
+      <div class="relation" id="home-relation"></div>
+      <div class="countdown-row" id="countdown-row">
+        <div class="count-box"><div class="num" id="cd-days">--</div><div class="lbl">Dias</div></div>
+        <div class="count-box"><div class="num" id="cd-hours">--</div><div class="lbl">Horas</div></div>
+        <div class="count-box"><div class="num" id="cd-mins">--</div><div class="lbl">Min</div></div>
+      </div>
+      <div id="reveal-badge" class="reveal-badge locked">🔒 A revelação ainda está guardada...</div>
+    </div>
+
+    <!-- Evento -->
+    <div class="card">
+      <div class="section-title">📅 O Evento</div>
+      <div class="info-row">
+        <div class="info-icon">📆</div>
+        <div class="info-text">
+          <div class="label">Data</div>
+          <div class="value">28 de junho de 2025</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <div class="label">Local</div>
+          <div class="value" id="event-location">A confirmar em breve 🌸</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">👶</div>
+        <div class="info-text">
+          <div class="label">Para celebrar</div>
+          <div class="value">O bebê da Flávia & Victor</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Presentes -->
+    <div class="card">
+      <div class="section-title">🎁 Sugestão de Presentes</div>
+      <p style="font-size:0.78rem; color:var(--soft); margin-bottom:12px;">Itens neutros e práticos são sempre bem-vindos 💛</p>
+      <div class="gift-grid">
+        <div class="gift-item"><span class="gi">🧷</span> Fraldas</div>
+        <div class="gift-item"><span class="gi">👕</span> Roupinhas neutras</div>
+        <div class="gift-item"><span class="gi">🍼</span> Mamadeiras</div>
+        <div class="gift-item"><span class="gi">🛁</span> Kit banho</div>
+        <div class="gift-item"><span class="gi">🧴</span> Produtos de higiene</div>
+        <div class="gift-item"><span class="gi">🧸</span> Pelúcias fofinhas</div>
+        <div class="gift-item"><span class="gi">🎀</span> Acessórios</div>
+        <div class="gift-item"><span class="gi">💝</span> Surpresa!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: PRESENÇA -->
+  <div id="tab-presenca" class="tab-content home-content">
+    <div class="card">
+      <div class="section-title">✅ Confirmar Presença</div>
+      <p style="font-size:0.85rem; color:var(--soft); margin-bottom:20px;">
+        Você conseguirá comparecer ao chá da Flávia no dia <strong>28 de junho</strong>?
+      </p>
+      <div class="rsvp-options">
+        <button class="rsvp-btn yes" onclick="setRSVP('sim', this)">✓ Sim, vou!</button>
+        <button class="rsvp-btn no" onclick="setRSVP('nao', this)">✗ Não poderei</button>
+      </div>
+      <div class="rsvp-status" id="rsvp-status"></div>
+    </div>
+  </div>
+
+  <!-- TAB: PALPITES -->
+  <div id="tab-palpites" class="tab-content home-content">
+    <div class="card">
+      <div class="section-title">🗳️ Palpites do Grupo</div>
+      <p style="font-size:0.82rem; color:var(--soft); margin-bottom:16px;">Veja o que o grupo está apostando!</p>
+      <div id="vote-results-display"></div>
+    </div>
+  </div>
+
+  <!-- TAB: FOTOS -->
+  <div id="tab-fotos" class="tab-content home-content">
+    <div class="card">
+      <div class="section-title">📸 Compartilhe suas Fotos</div>
+      <p style="font-size:0.82rem; color:var(--soft); margin-bottom:16px;">Envie suas fotos do chá para a gente guardar essa memória 💛</p>
+      <div class="photo-upload-area" onclick="document.getElementById('photo-input').click()">
+        <div class="pu-icon">📷</div>
+        <p><strong>Toque para selecionar fotos</strong></p>
+        <p>JPG, PNG · Até 5 fotos</p>
+      </div>
+      <input type="file" id="photo-input" accept="image/*" multiple style="display:none" onchange="handlePhotoUpload(event)">
+      <div class="photo-grid" id="photo-preview-grid"></div>
+      <div style="margin-top:12px;" id="send-photos-btn-wrap" style="display:none">
+        <button class="btn-primary" onclick="sendPhotos()">Enviar fotos 💛</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="showTab('inicio', this)">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">Início</span>
+    </button>
+    <button class="nav-item" onclick="showTab('presenca', this)">
+      <span class="nav-icon">✅</span>
+      <span class="nav-label">Presença</span>
+    </button>
+    <button class="nav-item" onclick="showTab('palpites', this)">
+      <span class="nav-icon">🗳️</span>
+      <span class="nav-label">Palpites</span>
+    </button>
+    <button class="nav-item" onclick="showTab('fotos', this)">
+      <span class="nav-icon">📸</span>
+      <span class="nav-label">Fotos</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ══ SCREEN 4: ADMIN ══ -->
+<div id="screen-admin" class="screen">
+  <div class="top-bar">
+    <h2>⚙️ Administração</h2>
+    <div class="avatar-badge" onclick="logout()">?</div>
+  </div>
+  <div class="admin-content">
+    <div class="admin-header">
+      <h2>Painel Admin</h2>
+      <p>Chá de Revelação da Flávia · 28 de junho</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num" id="admin-total-guests">0</div>
+        <div class="stat-lbl">Convidadas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="admin-confirmed">0</div>
+        <div class="stat-lbl">Confirmadas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="admin-votes">0</div>
+        <div class="stat-lbl">Palpites</div>
+      </div>
+    </div>
+
+    <!-- Votos -->
+    <div class="card">
+      <div class="section-title">🗳️ Resultado dos Palpites</div>
+      <div id="admin-vote-bars"></div>
+    </div>
+
+    <!-- Revelar -->
+    <div class="reveal-control">
+      <h3>🎊 Revelar o Sexo</h3>
+      <p style="font-size:0.8rem; color:var(--soft); margin-bottom:14px;">Quando você souber, escolha aqui para todos verem!</p>
+      <div class="reveal-options">
+        <button class="reveal-opt locked selected" id="ro-locked" onclick="setReveal('locked')">🔒 Oculto</button>
+        <button class="reveal-opt m" id="ro-m" onclick="setReveal('menino')">💙 Menino</button>
+        <button class="reveal-opt f" id="ro-f" onclick="setReveal('menina')">🌸 Menina</button>
+      </div>
+    </div>
+
+    <!-- Local -->
+    <div class="card">
+      <div class="section-title">📍 Local do Evento</div>
+      <div class="location-edit">
+        <input type="text" id="location-input" placeholder="Digite o local...">
+        <button onclick="saveLocation()">Salvar</button>
+      </div>
+    </div>
+
+    <!-- Gerenciar convidados -->
+    <div class="manage-guests">
+      <h3>👥 Gerenciar Convidadas</h3>
+      <div class="guest-add-row">
+        <input type="text" id="new-guest-name" placeholder="Nome da convidada">
+        <select id="new-guest-rel">
+          <option value="Vovó">Vovó</option>
+          <option value="Mamãe">Mamãe</option>
+          <option value="Tia">Tia</option>
+          <option value="Prima">Prima</option>
+          <option value="Amiga">Amiga</option>
+          <option value="Madrinha">Madrinha</option>
+          <option value="Cunhada">Cunhada</option>
+          <option value="Convidada">Convidada</option>
+        </select>
+        <button class="add-btn" onclick="addGuest()">+</button>
+      </div>
+      <div class="guest-list-admin" id="guest-list-admin"></div>
+    </div>
+
+    <!-- RSVP List -->
+    <div class="rsvp-list">
+      <h3>✅ Lista de Presença</h3>
+      <div id="admin-rsvp-list"></div>
+    </div>
+
+    <!-- Fotos enviadas -->
+    <div class="photos-admin">
+      <h3>📸 Fotos Enviadas</h3>
+      <div id="admin-photo-grid" class="photo-admin-grid">
+        <div class="empty-photos" style="grid-column:1/-1">Nenhuma foto enviada ainda</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-label">Admin</span>
+    </button>
+    <button class="nav-item" onclick="showScreen('home')">
+      <span class="nav-icon">👁️</span>
+      <span class="nav-label">Ver App</span>
+    </button>
+    <button class="nav-item" onclick="logout()">
+      <span class="nav-icon">🚪</span>
+      <span class="nav-label">Sair</span>
+    </button>
+  </nav>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="cha-script.js"></script>
+</body>
+</html>
