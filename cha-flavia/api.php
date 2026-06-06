@@ -74,7 +74,10 @@ try {
 
             if (!$convidado) erro('Nome não encontrado.', 404);
 
-            if ($convidado['device_id'] && $convidado['device_id'] !== $device_id) {
+            // Júlia pode acessar de qualquer dispositivo
+            $multi_device = strtolower(trim($convidado['nome'])) === 'júlia' || strtolower(trim($convidado['nome'])) === 'julia';
+
+            if (!$multi_device && $convidado['device_id'] && $convidado['device_id'] !== $device_id) {
                 erro('Esse nome já foi acessado em outro dispositivo.', 403);
             }
 
