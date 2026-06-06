@@ -87,7 +87,7 @@
         <div class="info-icon">📆</div>
         <div class="info-text">
           <div class="label">Data</div>
-          <div class="value">28 de junho de 2025</div>
+          <div class="value">28 de junho de 2026 · 15h00</div>
         </div>
       </div>
       <div class="info-row">
@@ -252,9 +252,23 @@
           <option value="Amiga">Amiga</option>
           <option value="Madrinha">Madrinha</option>
           <option value="Cunhada">Cunhada</option>
+          <option value="Organizadora">Organizadora</option>
           <option value="Convidada">Convidada</option>
         </select>
         <button class="add-btn" onclick="addGuest()">+</button>
+      </div>
+      <!-- Admin toggle -->
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; padding:10px 14px; background:rgba(201,169,110,0.08); border-radius:12px; border:1.5px solid rgba(201,169,110,0.2);">
+        <input type="checkbox" id="new-guest-admin" style="width:18px; height:18px; cursor:pointer; accent-color:var(--gold);">
+        <label for="new-guest-admin" style="font-size:0.85rem; cursor:pointer; color:var(--dark);">⚙️ Esta pessoa é <strong>administradora</strong> (acesso ao painel admin)</label>
+      </div>
+      <!-- Filhos da nova convidada -->
+      <div style="margin-bottom:12px;">
+        <div style="display:flex; gap:6px; margin-bottom:6px;">
+          <input type="text" id="novo-filho-input" placeholder="Nome do filho (opcional)" style="flex:1;" onkeydown="if(event.key==='Enter') addFilhoNovo()">
+          <button onclick="addFilhoNovo()" style="background:rgba(201,169,110,0.15);border:1.5px solid rgba(201,169,110,0.3);border-radius:10px;padding:0 14px;cursor:pointer;color:var(--gold);font-size:0.85rem;font-family:'DM Sans',sans-serif;">+ filho</button>
+        </div>
+        <div id="novos-filhos-lista" style="display:flex;flex-wrap:wrap;gap:6px;min-height:10px;"></div>
       </div>
       <div class="guest-list-admin" id="guest-list-admin"></div>
     </div>
